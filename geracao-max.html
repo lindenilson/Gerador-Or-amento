@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Proposta</title>
+    <link rel="stylesheet" href="./css/geral.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+
+</head>
+
+<body>
+    <!-- INICIO HOME DA PAGINA-->
+
+    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Close menu" role="button">
+    <label class="close-menu-label" for="close-menu" title="close menu"></label>
+    <aside class="menu">
+        <div class="menu-content">
+            <h1 onclick="getElementById('close-menu').checked = false;">
+                <a href="./index.html">
+                    <!-- <img src="./img/logo.png" alt="logo-da-pagina"> -->
+                    <p style="font-size: 3rem;">LOGO</p>
+                </a>
+            </h1>
+            <nav>
+                <ul onclick="getElementById('close-menu').checked = false;">
+                    <li><a href="./index.html">Gerador de Proposta</a></li>
+                    <li class="drop-hover"><a href="geracao-max.html">Geração max. Inversor</a>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- FIM HOME DA PAGINA-->
+
+    <div class="espaco"></div>
+
+    <!-- INICIO SEGUNDA SEÇÃO - GERAÇÃO MAX. INVERSOR DEYE-->
+
+    <section id="tabela-deye" class="section main-white">
+        <div class="white-content">
+            <h2>GERAÇÃO MAXIMA INVERSOR</h2>
+            <div class="form-grid-tabela">
+
+                <div class="grid-tabela">
+                    <label for="potenciaPainel">Potência do Painel (W):</label>
+                    <input class="input-table" type="number" id="potenciaPainel" name="potenciaPainel" value="570"
+                        step="5" min="0" oninput="atualizarTabela(), validarPositivo(this)">
+                </div>
+
+                <div class="grid-tabela">
+                    <label class="marca-inversor" for="marca">Marca do inversor:</label>
+                    <select class="input-table" id="marca" onchange="atualizarTabela()">
+                        <option value="Deye">Deye</option>
+                        <option value="Growatt">Growatt</option>
+                        <option value="Saj">Saj</option>
+                        <option value="Solis">Solis</option>
+                    </select>
+
+                </div>
+
+
+            </div>
+            <br>
+            <br>
+            <div class="responsive-table">
+                <table id="tabelaInversores">
+                    <thead>
+                        <tr>
+                            <th>Inversor (kW)</th>
+                            <th>Kwp Max</th>
+                            <th>Máximo de Painéis</th>
+                            <th>Mínimo de Painéis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- INICIO SEGUNDA SEÇÃO - GERAÇÃO MAX. INVERSOR DEYE-->
+
+
+
+
+    <script src="./js/script-tabela.js"></script>
+</body>
+
+</html>
